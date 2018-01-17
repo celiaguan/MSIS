@@ -1,2 +1,2 @@
 # MSIS
-## School projects for Information System Degree 
+## School projects for Information Systems Degree 
