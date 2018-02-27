@@ -1,0 +1,438 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10500.17.1226.1925                               -->
+<workbook source-build='10.5.0 (10500.17.1226.1925)' source-platform='mac' version='10.5' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='vol_clean' inline='true' name='federated.0qb24u70uswym51dfc4jw1o8gedi' version='10.5'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='vol_clean' name='textscan.06mfbrk000ip491b321je0emtj6q'>
+            <connection class='textscan' directory='/Users/celiaguan/Documents/GitHub/MSIS' filename='vol_clean.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation name='Pivot' type='pivot'>
+          <columns>
+            <column datatype='string' name='Pivot Field Names' />
+            <column datatype='real' name='Pivot Field Values' />
+          </columns>
+          <tag name='Pivot Field Names'>
+            <value name='[Bitfinex]' />
+            <value name='[Bitflyer]' />
+            <value name='[Bitstamp]' />
+            <value name='[Btcchina]' />
+            <value name='[Btce]' />
+            <value name='[Huobi]' />
+            <value name='[Lakebtc]' />
+            <value name='[Mtgox]' />
+            <value name='[Okcoin]' />
+            <value name='[Others]' />
+          </tag>
+          <groups>
+            <group name='Pivot Field Values'>
+              <field name='[vol_clean.csv].[bitfinex]' />
+              <field name='[vol_clean.csv].[bitflyer]' />
+              <field name='[vol_clean.csv].[bitstamp]' />
+              <field name='[vol_clean.csv].[btcchina]' />
+              <field name='[vol_clean.csv].[btce]' />
+              <field name='[vol_clean.csv].[huobi]' />
+              <field name='[vol_clean.csv].[lakebtc]' />
+              <field name='[vol_clean.csv].[mtgox]' />
+              <field name='[vol_clean.csv].[okcoin]' />
+              <field name='[vol_clean.csv].[others]' />
+            </group>
+          </groups>
+          <relation connection='textscan.06mfbrk000ip491b321je0emtj6q' name='vol_clean.csv' table='[vol_clean#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='date' name='Time' ordinal='1' />
+              <column datatype='real' name='bitfinex' ordinal='2' />
+              <column datatype='real' name='bitflyer' ordinal='3' />
+              <column datatype='real' name='bitstamp' ordinal='4' />
+              <column datatype='real' name='btcchina' ordinal='5' />
+              <column datatype='real' name='btce' ordinal='6' />
+              <column datatype='real' name='huobi' ordinal='7' />
+              <column datatype='real' name='lakebtc' ordinal='8' />
+              <column datatype='real' name='mtgox' ordinal='9' />
+              <column datatype='real' name='okcoin' ordinal='10' />
+              <column datatype='real' name='others' ordinal='11' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[vol_clean.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[vol_clean.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Time</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Time]</local-name>
+            <parent-name>[vol_clean.csv]</parent-name>
+            <remote-alias>Time</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Names</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Pivot Field Names]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Names</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Values</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Pivot Field Values]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Values</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[F1]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Exchanges' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
+      <column caption='VOL' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+      <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Pivot Field Names]' derivation='None' name='[none:Pivot Field Names:nk]' pivot='key' type='nominal' />
+      <column-instance column='[F1]' derivation='Sum' name='[sum:F1:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Pivot Field Values]' derivation='Sum' name='[sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.480804' measure-ordering='alphabetic' measure-percentage='0.519196' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0qb24u70uswym51dfc4jw1o8gedi].[sum:Pivot Field Values:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0qb24u70uswym51dfc4jw1o8gedi].[sum:Number of Records:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0qb24u70uswym51dfc4jw1o8gedi].[sum:F1:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0qb24u70uswym51dfc4jw1o8gedi]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Pivot Field Names:nk]' palette='summer_10_0' type='palette'>
+            <map to='#00a2b3'>
+              <bucket>&quot;Btce&quot;</bucket>
+            </map>
+            <map to='#74b30b'>
+              <bucket>&quot;Bitfinex&quot;</bucket>
+            </map>
+            <map to='#80b1e4'>
+              <bucket>&quot;Others&quot;</bucket>
+            </map>
+            <map to='#97cfd0'>
+              <bucket>&quot;Huobi&quot;</bucket>
+            </map>
+            <map to='#b9ca5d'>
+              <bucket>&quot;Bitflyer&quot;</bucket>
+            </map>
+            <map to='#cf3e53'>
+              <bucket>&quot;Bitstamp&quot;</bucket>
+            </map>
+            <map to='#e8afdc'>
+              <bucket>&quot;Okcoin&quot;</bucket>
+            </map>
+            <map to='#f1788d'>
+              <bucket>&quot;Btcchina&quot;</bucket>
+            </map>
+            <map to='#f3a546'>
+              <bucket>&quot;Lakebtc&quot;</bucket>
+            </map>
+            <map to='#f7c480'>
+              <bucket>&quot;Mtgox&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <default-sorts>
+        <sort class='manual' column='[none:Forecast Indicator:nk]' direction='ASC'>
+          <dictionary>
+            <bucket>&quot;Actual&quot;</bucket>
+            <bucket>&quot;Estimate&quot;</bucket>
+          </dictionary>
+        </sort>
+      </default-sorts>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Highlight 1 (generated)' name='[Action1]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='sheet' worksheet='Sheet 1' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Exchanges' />
+        <param name='target' value='Sheet 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='vol_clean' name='federated.0qb24u70uswym51dfc4jw1o8gedi' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qb24u70uswym51dfc4jw1o8gedi'>
+            <column caption='Exchanges' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
+            <column caption='VOL' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+            <column datatype='date' name='[Time]' role='dimension' type='ordinal' />
+            <column-instance column='[Pivot Field Names]' derivation='None' name='[none:Pivot Field Names:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Time]' derivation='None' name='[none:Time:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Pivot Field Values]' derivation='Sum' name='[sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Time]' derivation='Day-Trunc' name='[tdy:Time:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0qb24u70uswym51dfc4jw1o8gedi].[none:Time:qk]' included-values='in-range'>
+            <min>#2017-04-06#</min>
+            <max>#2018-02-16#</max>
+          </filter>
+          <filter class='quantitative' column='[federated.0qb24u70uswym51dfc4jw1o8gedi].[sum:Pivot Field Values:qk]' included-values='in-range'>
+            <min>0.0</min>
+            <max>5941880.2729999991</max>
+          </filter>
+          <slices>
+            <column>[federated.0qb24u70uswym51dfc4jw1o8gedi].[none:Time:qk]</column>
+            <column>[federated.0qb24u70uswym51dfc4jw1o8gedi].[sum:Pivot Field Values:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing custom-mark-size-in-axis-units='1.0' mark-alignment='mark-alignment-left' mark-sizing-setting='marks-scaling-on' use-custom-mark-size='false' />
+            <encodings>
+              <color column='[federated.0qb24u70uswym51dfc4jw1o8gedi].[none:Pivot Field Names:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0qb24u70uswym51dfc4jw1o8gedi].[sum:Pivot Field Values:qk]</rows>
+        <cols>[federated.0qb24u70uswym51dfc4jw1o8gedi].[tdy:Time:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='vol_clean' name='federated.0qb24u70uswym51dfc4jw1o8gedi' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qb24u70uswym51dfc4jw1o8gedi'>
+            <column datatype='integer' name='[F1]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column caption='VOL' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+            <column datatype='date' name='[Time]' role='dimension' type='ordinal' />
+            <column-instance column='[Time]' derivation='None' name='[none:Time:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[F1]' derivation='Sum' name='[sum:F1:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Pivot Field Values]' derivation='Sum' name='[sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Time]' derivation='Day-Trunc' name='[tdy:Time:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0qb24u70uswym51dfc4jw1o8gedi].[none:Time:qk]' included-values='in-range'>
+            <min>#2000-01-02#</min>
+            <max>#2018-02-16#</max>
+          </filter>
+          <slices>
+            <column>[federated.0qb24u70uswym51dfc4jw1o8gedi].[none:Time:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <trendline degree='3' enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='polynomial' />
+          </pane>
+        </panes>
+        <rows>[federated.0qb24u70uswym51dfc4jw1o8gedi].[Multiple Values]</rows>
+        <cols>[federated.0qb24u70uswym51dfc4jw1o8gedi].[tdy:Time:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 2 (2)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='vol_clean' name='federated.0qb24u70uswym51dfc4jw1o8gedi' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qb24u70uswym51dfc4jw1o8gedi'>
+            <column caption='VOL' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+            <column datatype='date' name='[Time]' role='dimension' type='ordinal' />
+            <column-instance column='[Pivot Field Values]' derivation='Sum' forecast-column-base='[sum:Pivot Field Values:qk]' forecast-column-type='forecast-value' name='[fVal:sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Time]' derivation='None' name='[none:Time:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Pivot Field Values]' derivation='Sum' name='[sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Time]' derivation='Day-Trunc' name='[tdy:Time:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0qb24u70uswym51dfc4jw1o8gedi].[none:Time:qk]' included-values='in-range'>
+            <min>#2017-04-06#</min>
+            <max>#2018-02-16#</max>
+          </filter>
+          <slices>
+            <column>[federated.0qb24u70uswym51dfc4jw1o8gedi].[none:Time:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0qb24u70uswym51dfc4jw1o8gedi].[fVal:sum:Pivot Field Values:qk]' field-type='quantitative' max='654196.31626738654' min='0.0' range-type='fixed' scope='rows' type='space' />
+            <format attr='subtitle' class='0' field='[federated.0qb24u70uswym51dfc4jw1o8gedi].[fVal:sum:Pivot Field Values:qk]' scope='rows' value='' />
+            <format attr='auto-subtitle' class='0' field='[federated.0qb24u70uswym51dfc4jw1o8gedi].[fVal:sum:Pivot Field Values:qk]' scope='rows' value='true' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0qb24u70uswym51dfc4jw1o8gedi].[none:Forecast Indicator:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0qb24u70uswym51dfc4jw1o8gedi].[fVal:sum:Pivot Field Values:qk]</rows>
+        <cols>[federated.0qb24u70uswym51dfc4jw1o8gedi].[tdy:Time:qk]</cols>
+        <forecast-specification auto-forecast-agg='true' band-confidence-level='95.000000' enabled='true' fill-type='fill-missing' ignore-last='1' model-type='auto-season' range-type='auto' show-prediction-bands='true' />
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0qb24u70uswym51dfc4jw1o8gedi].[sum:Pivot Field Values:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card param='[federated.0qb24u70uswym51dfc4jw1o8gedi].[none:Time:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card pane-specification-id='3' param='[federated.0qb24u70uswym51dfc4jw1o8gedi].[none:Pivot Field Names:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0qb24u70uswym51dfc4jw1o8gedi].[none:Time:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='worksheet' name='Sheet 2 (2)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0qb24u70uswym51dfc4jw1o8gedi].[none:Time:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card pane-specification-id='0' param='[federated.0qb24u70uswym51dfc4jw1o8gedi].[none:Forecast Indicator:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+  </windows>
+</workbook>
